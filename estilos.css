@@ -1,0 +1,97 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+
+body{
+  background-color: #2c3e50;
+  font-family: 'Lexend Mega', sans-serif; /* Letra bien bonica */
+}
+
+h1{
+  text-align: center; /* Texto al centro */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:white;
+  font-size: 80px;
+}
+
+.contenedor-galeria{
+  width: 800px;
+  height: 320px;
+  overflow: hidden; 
+  margin:50px auto;
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.35);
+}
+
+.contenedor-galeria li{
+  position: relative; /* Cuando tiene un espacio determinado y lo sobrepasa crea un salto de linea para ajustarlo */
+  display: block;
+  width: 160px;
+  float: left; /* Alinea a la izquierda */
+  box-shadow: 0 0 25px 10px rgba(0,0,0,0.5 );
+  transition: all 0.5s;
+}
+
+.contenedor-galeria ul:hover li{
+  width: 40px;
+  filter: brightness(50%); /* Modifica el brillo del elemento del contenedor al pasar el raton encima */
+}
+
+.contenedor-galeria ul li:hover{
+  width: 640px;
+  filter: brightness(100%);
+}
+
+.contenedor-galeria li img{
+  display: block;
+  width: 640px;
+  height: 100%;
+}
+
+.titulo-imagen{
+  background: rgb(0,0,0,0.8);
+  position: absolute; /* */
+  top: 100%;
+  width: 100%;
+  display: block;
+  transition: all 0.5s ease; /* Tipo de transicion ease indica que ira de mayor a menor velocidad */
+  background-size: 400% 400%; /* Tamaño del fondo */
+
+}
+@keyframes cambia-color{
+  0%{
+    background-position: 0%, 50%;
+  }
+  50%{
+     background-position: 100%, 50%;
+  }
+  100%{
+     background-position: 0%, 100%;
+  }
+}
+
+.titulo-imagen a{ /* Modifica el texto del titulo de la imagen */
+  display:block;
+  color:white;
+  text-decoration: none; /* Texto sin decoracion */
+  text-align: center; /* Texto al centro */
+  padding: 20px;
+  font-size: 20px;
+  text-shadow: 0 1px 2px black;
+  transition: all 0.5s ease;
+}
+
+.contenedor-galeria ul li:hover .titulo-imagen{
+  top:0%;
+  box-shadow: 0 0 25px 10px rgba(0,0,0,0.5); /* Color de la sombra de la caja */
+}
+
+.titulo-imagen:hover a{
+  transform: scale(1.1);   /* Cambia la escala de la imagen al poner el cursor por encima */
+  transition: all 0.5s ease; /* Tipo de transicion, ease hace que decremente con el tiempo */
+}
+
+.titulo-imagen:active{  
+  background: rgba(255,255,255,0.5);
+}
